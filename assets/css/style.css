@@ -1,0 +1,199 @@
+:root{
+--text-color: hsl(227, 75%, 14%);
+--extensions-text-color: hsl(226, 11%, 37%);
+--hover-items: hsl(0, 0%, 78%);
+--color-border-remove: hsl(217, 61%, 90%);
+--backgroun-icon-theme: hsl(0, 0%, 93%);
+--background-items: hsl(200, 60%, 99%);
+--text-color-filter: hsl(200, 60%, 99%);
+--remove-hover: hsl(3, 77%, 44%);
+--filter-hover: hsl(3, 86%, 64%);
+--Red-500: hsl(3, 71%, 56%);
+--activated-status: hsl(3, 77%, 44%);
+
+--background-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+}
+
+[data-theme="dark"]{
+    --background-items: hsl(226, 25%, 17%);
+    --backgroun-icon-theme: hsl(225, 23%, 24%);
+    --activated-status: hsl(3, 86%, 64%);
+    --filter-hover: hsl(3, 77%, 44%);
+    --text-color: hsl(200, 60%, 99%);
+    --color-border-remove: hsl(225, 23%, 24%);
+    --text-color-filter: hsl(227, 75%, 14%);
+    --extensions-text-color: hsl(0, 0%, 78%);
+    --hover-items:   hsl(226, 11%, 37%);
+    --remove-hover: hsl(3, 71%, 56%);
+    --background-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+body{
+    padding: 30px;
+    background: var(--background-gradient);
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    background: var(--background-items);
+}
+
+.tema{
+    background-color: var(--backgroun-icon-theme);
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+}
+
+.tema:hover{
+    cursor: pointer;
+    background-color: var(--hover-items);
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.list .filters{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    
+}
+
+.list .filters .show{
+    background-color: var(--activated-status);
+    color: var(--text-color-filter);
+    font-weight: 600;
+}
+
+.list .filters button{
+    background-color: var(--background-items);
+    padding: 7px 12px;
+    border-radius: 50px;
+    border: none;
+    color: var(--text-color);
+}
+
+.list .filters button:hover{
+    cursor: pointer;
+    background-color: var(--hover-items);
+}
+
+.list .filters .show:hover{
+    background-color: var(--filter-hover);
+}
+
+.extensions-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    align-content: space-around;
+}
+
+.extensions-list .extensions{
+    background-color: var(--background-items);
+    border-radius: 30px;
+    padding: 20px;
+    flex-basis: 400px;
+    flex-shrink: 1;
+    margin-top: 15px;
+}
+
+.extensions-list .extensions .top-infos{
+    display: flex;
+    gap: 15px;
+    color: var(--text-color);
+}
+
+.extensions-list .extensions .top-infos .infos p{
+    margin-top: 10px;
+    color: var(--extensions-text-color);
+    font-size: 15px;
+}
+
+.extensions-list .extensions .actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.extensions-list .extensions .actions .btn-remove{
+    background-color: var(--background-items);
+    padding: 6px 10px;
+    border-radius: 50px;
+    border: solid 1px var(--color-border-remove);
+    color: var(--text-color);
+} 
+
+.extensions-list .extensions .actions .btn-remove:hover{
+    background-color: var(--remove-hover);
+    color: var(--text-color-filter);
+}
+
+.extensions-list .extensions .actions .btn-remove:hover{
+    cursor: pointer;
+}
+
+.tema:focus, .list .filters button:focus, .extensions-list .extensions .actions .btn-remove:focus{
+    border: 2px solid var(--Red-500);
+}
+
+.list .filters .show:focus{
+    border: 1px solid var(--background-items);
+    outline: 2px solid var(--Red-500);
+}
+
+header, .list .filters button, .extensions-list .extensions{
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.toggle > input {
+    display: none;
+}
+.toggle > label {
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 40px;
+    background: var(--color-border-remove);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.toggle > label:after {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100px;
+    background: #fff;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 0.3s ease;
+}
+.toggle > input:checked ~ label {
+    background-color: var(--activated-status);
+}
+.toggle > input:checked ~ label:after {
+    left: 23px;
+    background: hsl(200, 60%, 99%);
+}
+
+.ocult{
+    display: none;
+}

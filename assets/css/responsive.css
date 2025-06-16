@@ -1,0 +1,14 @@
+@media(max-width: 400px){
+    body{
+        padding: 12px;
+    }
+
+    .list{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .list .filters button{
+        padding: 12px 17px;
+    }
+}
